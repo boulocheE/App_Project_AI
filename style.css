@@ -1,0 +1,197 @@
+* {
+	margin : 0px;
+	padding : 0px;
+
+	font-family : Avenir, sans-serif;
+}
+
+
+body {
+	background : #F5F5F5;
+}
+
+
+header {
+	padding-top    : calc( 15vh / 2 );
+	padding-bottom : calc( 15vh / 2 );
+
+	background: #229954;
+
+	color : white;
+	text-align: center;
+	font-size : 1.5em;
+}
+
+
+nav {
+	position : fixed;
+
+	width: 10%;
+
+	padding : 1%;
+}
+
+
+hr {
+	border : 0;
+	margin : 0 0 4% 0;
+	padding : 0;
+
+	border-top : solid 2px #DBDBDB;
+
+	width : 100%;
+}
+
+
+a {
+	color : black;
+	text-decoration: none;
+}
+
+
+
+
+
+section#parcours {
+	width : 65%;
+
+	float : left;
+
+	margin : 0 1% 4% 15%;
+}
+
+section#parcours article {
+	float : left;
+
+	width : calc( 48% - 2% - 3% - 4px );
+	min-width : 70px;
+
+	padding : 0 2% 2% 2%;
+	margin  : 3% 3% 0 0;
+
+	box-shadow: 0 0 2em #88888888;
+	border-radius: 1%;
+
+	background: white;
+
+	text-align : justify;
+}
+
+
+section#parcours h2 {
+	padding : 8% 0 4% 0;
+	font-size:xx-large;
+	font-weight: 500;
+}
+
+
+
+
+nav li {
+	padding : 10%;
+
+	color : #7A7A7A;
+
+	list-style : none;
+}
+
+nav li ul {
+	display : none;
+}
+
+
+nav li li {
+	color : #4A4A4A;
+
+	margin-left : 5%;
+}
+
+nav li:hover ul {
+	display : block;
+	transition: visibility;
+	transition-delay : 50s; 
+}
+
+nav li li:hover {
+	background : #229954;
+	color : white;
+}
+
+
+
+section#contact {
+	width : 17%;
+	height : 100vh;
+
+	padding : 1%;
+
+	float : left;
+}
+
+
+section#contact > figure img {
+	width : 85%;
+	box-shadow: 0 0 1em #88888888;
+
+	margin: 6% 0 5% calc((100% - 85%) /2);
+}
+
+
+section#contact > figure figcaption {
+	text-align: center;
+	color : #4A4A4A;
+}
+
+
+section#contact article figure { margin : 5% 0 5% 0; }
+
+section#contact article img { width : 10%; }
+
+section#contact article figcaption {
+	float : right;
+
+	width : 80%;
+
+	padding : 0 5% 0 5%;
+}
+
+section#contact hr { margin : 8% 0 8% 0; }
+
+
+
+/* section#parcours {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.div1 {
+	flex: 1 0 calc( 48% - 2% - 3% - 4px );
+}
+
+.div2, .div3, .div4 {
+	flex: 1 calc( 48% - 2% - 3% - 4px );
+}
+
+.div3 {
+	align-self: flex-start;
+} */
+
+
+
+@media screen and (max-width: 600px) {
+	section#parcours article {
+		flex-direction: column; /* Les div vont passer en dessous l'une de l'autre */
+		width : 100%;
+	}
+
+	nav {
+		display : none;
+	}
+}
+
+
+
+
+/* TITRES :     7A7A7A
+   SOUS TITRES :4A4A4A 
+*/
