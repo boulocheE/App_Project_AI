@@ -1,3 +1,9 @@
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*            STYLE GENERAL             */
+/* ------------------------------------ */
+/* ------------------------------------ */
+
 * {
 	margin : 0px;
 	padding : 0px;
@@ -23,13 +29,6 @@ header {
 }
 
 
-nav {
-	position : fixed;
-
-	width: 10%;
-
-	padding : 1%;
-}
 
 
 hr {
@@ -43,16 +42,68 @@ hr {
 }
 
 
-a {
+a, a:visited {
 	color : black;
 	text-decoration: none;
+}
+
+
+/* PARTIE - Navigation */
+
+nav#menu {
+	position : fixed;
+
+	width: 10%;
+
+	padding : 1% 1% 1% 0;
+}
+
+nav#menu > ul { padding-left : 1%; }
+
+
+nav#menu li {
+	padding : 10%;
+
+	color : #7A7A7A;
+
+	list-style : none;
+
+	border-radius: 3%;
+}
+
+nav#menu li ul { display : none; }
+
+nav#menu li li, nav#menu a, nav#menu a:visited { color : #4A4A4A }
+nav#menu li li { margin-left : 5%; }
+
+nav#menu li:hover ul { display : block; }
+
+nav#menu li li:hover, nav#menu a:hover { color : #229954; }
+
+nav#menu li.partie:hover {
+	box-shadow: 0 0 1em #88888888;
+	background : white;
+}
+
+
+nav#menu li.choix ul { display : block; }
+
+nav#menu li#choixPage {
+	color : #229954;
+	font-weight: bold;
 }
 
 
 
 
 
-section#parcours {
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*           STYLE PARCOURS             */
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+div#parcours {
 	width : 65%;
 
 	float : left;
@@ -60,7 +111,7 @@ section#parcours {
 	margin : 0 1% 4% 15%;
 }
 
-section#parcours article {
+div#parcours article {
 	float : left;
 
 	width : calc( 48% - 2% - 3% - 4px );
@@ -78,7 +129,7 @@ section#parcours article {
 }
 
 
-section#parcours h2 {
+div#parcours h2 {
 	padding : 8% 0 4% 0;
 	font-size:xx-large;
 	font-weight: 500;
@@ -87,39 +138,15 @@ section#parcours h2 {
 
 
 
-nav li {
-	padding : 10%;
-
-	color : #7A7A7A;
-
-	list-style : none;
-}
-
-nav li ul {
-	display : none;
-}
 
 
-nav li li {
-	color : #4A4A4A;
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*            STYLE CONTACT             */
+/* ------------------------------------ */
+/* ------------------------------------ */
 
-	margin-left : 5%;
-}
-
-nav li:hover ul {
-	display : block;
-	transition: visibility;
-	transition-delay : 50s; 
-}
-
-nav li li:hover {
-	background : #229954;
-	color : white;
-}
-
-
-
-section#contact {
+div#contact {
 	width : 17%;
 	height : 100vh;
 
@@ -129,7 +156,7 @@ section#contact {
 }
 
 
-section#contact > figure img {
+div#contact > figure img {
 	width : 85%;
 	box-shadow: 0 0 1em #88888888;
 
@@ -137,17 +164,17 @@ section#contact > figure img {
 }
 
 
-section#contact > figure figcaption {
+div#contact > figure figcaption {
 	text-align: center;
 	color : #4A4A4A;
 }
 
 
-section#contact article figure { margin : 5% 0 5% 0; }
+div#contact div figure { margin : 5% 0 5% 0; }
 
-section#contact article img { width : 10%; }
+div#contact div img { width : 10%; }
 
-section#contact article figcaption {
+div#contact div figcaption {
 	float : right;
 
 	width : 80%;
@@ -155,7 +182,7 @@ section#contact article figcaption {
 	padding : 0 5% 0 5%;
 }
 
-section#contact hr { margin : 8% 0 8% 0; }
+div#contact hr { margin : 8% 0 8% 0; }
 
 
 
@@ -176,6 +203,68 @@ section#contact hr { margin : 8% 0 8% 0; }
 	align-self: flex-start;
 } */
 
+
+
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*             STYLE PAGES              */
+/* ------------------------------------ */
+/* ------------------------------------ */
+body.page section { margin-left : 15%; }
+body.page div     { margin-left: 25%; }
+
+div.page { width : 75%; }
+
+div.page nav {
+	width : 100%;
+
+	padding : 2% 0 2% 0;
+	margin : 1% 0 0 0;
+}
+
+
+div.page nav li.choix {
+	color : white;
+	background: #229954;
+	box-shadow: 0 0 1em #88888888;
+}
+
+div.page nav li {
+	float: left;
+
+	width : 15%;
+
+	list-style: none;
+
+	text-align: center;
+
+	padding : 1% 0 1% 0;
+
+	border: solid 1px #229954;
+	background : white;
+
+	margin-right : 2%;
+
+	border-radius: 3%;
+}
+
+div.page hr {
+	width: 80%;
+
+	border-top : solid 1px #229954;
+}
+
+
+div.page li:hover { color : #229954; }
+
+
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*           STYLE RESONSIVE            */
+/* ------------------------------------ */
+/* ------------------------------------ */
 
 
 @media screen and (max-width: 600px) {
