@@ -212,7 +212,7 @@ div#contact hr { margin : 8% 0 8% 0; }
 /* ------------------------------------ */
 /* ------------------------------------ */
 body.page section { margin-left : 15%; }
-body.page div     { margin-left: 25%; }
+body.page div     { margin-left: 20%; }
 
 div.page { width : 75%; }
 
@@ -250,13 +250,51 @@ div.page nav li {
 }
 
 div.page hr {
-	width: 80%;
+	width: 90%;
 
-	border-top : solid 1px #229954;
+	border-top : solid 1px #DBDBDB;
 }
 
 
 div.page li:hover { color : #229954; }
+
+
+section#projet { display: none; }
+
+section#projet #fichierTxt { display: none; }
+
+
+
+input[type = "radio"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #BDC3C7;
+	outline: none;
+	transition: 0.2s all linear;
+}
+
+input[type = "radio"] { border-radius : 50%; }
+
+input[type = "radio"]:checked, input[type = "checkbox"]:checked {
+	border-color     : #229954;
+	background-color : #229954;
+}
+
+
+button {
+	background : #229954;
+	color : white;
+	border : 0px;
+	padding : 1%;
+
+	border-radius: 3%;
+
+	box-shadow: 0 0 1em #88888888;
+}
+
 
 
 

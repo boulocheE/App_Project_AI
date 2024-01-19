@@ -72,8 +72,8 @@
 		<div class = "page">
 			<nav>
 				<ul>
-					<li class = "choix"> Compte-rendu </li>
-					<li> Projet </li>
+					<li id = "menuCR" class = "choix" onclick = "changementEtat(event, 'projet', 'compteRendu', 'menuPr', 'menuCR')"> Compte-rendu </li>
+					<li id = "menuPr"                 onclick = "changementEtat(event, 'compteRendu', 'projet', 'menuCR', 'menuPr')"> Projet       </li>
 				</ul>
 			</nav>
 
@@ -82,13 +82,41 @@
 
 
 		<section id = "compteRendu">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+				incididunt ut labore et dolore magna aliqua. Pulvinar etiam non quam lacus suspendisse 
+				faucibus interdum. In cursus turpis massa tincidunt dui ut ornare lectus. 
+				Ac tortor dignissim convallis aenean et tortor at. Pretium lectus quam id leo in. 
+				Malesuada fames ac turpis egestas integer. Cras fermentum odio eu feugiat 
+				pretium nibh. Tortor vitae purus faucibus ornare suspendisse. 
+				Eget egestas purus viverra accumsan. Mattis pellentesque id nibh tortor 
+				id aliquet lectus proin. Non enim praesent elementum facilisis leo. Sed risus 
+				ultricies tristique nulla aliquet enim tortor at auctor.
+			</p>
 		</section>
 
 
 		<section id = "projet">
 
-			<input type="text" placeholder="Entrez une valeur ici" id="in">
-			<button type="button" onclick="getValue();">Récupérer la valeur</button>
+			<div>
+				<input type = "radio" id = "choixTxt"     name = "infosDoc" onclick = "formulaireFichierTexte(event, 'fichierTxt', 'zoneTexte')">
+				<label> Zone de texte pour écrire </label>
+			</div>
+
+			<div>
+				<input type = "radio" id = "choixFichier" name = "infosDoc" onclick = "formulaireFichierTexte(event, 'zoneTexte', 'fichierTxt')">
+				<label> Partager un fichier <b>.txt</b> </label>
+			</div>
+
+			<div id = 'zoneTexte'>
+				<input type="text" placeholder="Entrez une valeur ici" id="in">
+				<button type="button" onclick="getValue();">Récupérer la valeur</button>
+			</div>
+
+			<div id = 'fichierTxt'>
+				<input type="file">
+				<button type="button" onclick="getValue();">Récupérer la valeur</button>
+			</div>
 
 		</section>
 
