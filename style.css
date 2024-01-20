@@ -12,9 +12,7 @@
 }
 
 
-body {
-	background : #F5F5F5;
-}
+body { background : #F5F5F5; }
 
 
 header {
@@ -58,27 +56,36 @@ nav#menu {
 	padding : 1% 1% 1% 0;
 }
 
+nav#menu img {
+	width : 20%;
+
+	margin : 0 5% 0 10%;
+}
+
 nav#menu > ul { padding-left : 1%; }
 
 
-nav#menu li {
+nav#menu li, nav#menu li a:visited {
 	padding : 10%;
 
 	color : #7A7A7A;
 
 	list-style : none;
 
-	border-radius: 3%;
+	border-radius: 3px;
 }
 
 nav#menu li ul { display : none; }
 
-nav#menu li li, nav#menu a, nav#menu a:visited { color : #4A4A4A }
-nav#menu li li { margin-left : 5%; }
+nav#menu li li, nav#menu a, nav#menu li li a:visited { color : #4A4A4A }
+nav#menu li li + nav#menu li li a {
+	padding : 5%;
+	margin-left : 5%;
+}
 
 nav#menu li:hover ul { display : block; }
 
-nav#menu li li:hover, nav#menu a:hover { color : #229954; }
+nav#menu li li:hover, nav#menu li li a:hover { color : #229954; }
 
 nav#menu li.partie:hover {
 	box-shadow: 0 0 1em #88888888;
@@ -93,7 +100,7 @@ nav#menu li#choixPage {
 	font-weight: bold;
 }
 
-
+nav#menu li#choixPage a:visited { color : #229954; }
 
 
 
@@ -121,7 +128,7 @@ div#parcours article {
 	margin  : 3% 3% 0 0;
 
 	box-shadow: 0 0 2em #88888888;
-	border-radius: 1%;
+	border-radius: 1px;
 
 	background: white;
 
@@ -211,8 +218,8 @@ div#contact hr { margin : 8% 0 8% 0; }
 /*             STYLE PAGES              */
 /* ------------------------------------ */
 /* ------------------------------------ */
-body.page section { margin-left : 15%; }
-body.page div     { margin-left: 20%; }
+body.page section  { margin-left : 15%; }
+body.page div.page { margin-left: 20%; }
 
 div.page { width : 75%; }
 
@@ -246,7 +253,8 @@ div.page nav li {
 
 	margin-right : 2%;
 
-	border-radius: 3%;
+	border-top-right-radius : 5px;
+	border-top-left-radius  : 5px;
 }
 
 div.page hr {
@@ -258,6 +266,9 @@ div.page hr {
 
 div.page li:hover { color : #229954; }
 
+
+
+/* PARTIE PROJET */
 
 section#projet { display: none; }
 
@@ -271,12 +282,13 @@ input[type = "radio"] {
 	appearance: none;
 	width: 16px;
 	height: 16px;
-	border: 2px solid #BDC3C7;
+	border: 2px solid #88888888;
 	outline: none;
 	transition: 0.2s all linear;
 }
 
 input[type = "radio"] { border-radius : 50%; }
+div.boutons { margin-bottom : 1%; }
 
 input[type = "radio"]:checked, input[type = "checkbox"]:checked {
 	border-color     : #229954;
@@ -285,17 +297,139 @@ input[type = "radio"]:checked, input[type = "checkbox"]:checked {
 
 
 button {
+	position : fixed;
+
+	right : 2%;
+	bottom : 2%;
+
 	background : #229954;
 	color : white;
 	border : 0px;
 	padding : 1%;
 
-	border-radius: 3%;
+	box-shadow: 0 0 1em #88888888;
 
+	margin : 0 2% 2% 0;
+
+	font-size :medium;
+}
+
+button:active {
+	background : white;
+	color : #229954;
+	border : solid 1px  #229954;
+}
+
+input[type = "text"] {
+	width : 70%;
+	height: 20vh;
+
+	border : solid 1px #88888888;
+	border-radius: 3px;
+
+	margin : 2% 10% 2% 10%;
+
+	padding : 2%;
+}
+
+input[type = "text"]:focus {
+	outline : none;
+	border : solid 2px #229954;
 	box-shadow: 0 0 1em #88888888;
 }
 
 
+input[type = "file"]::file-selector-button {
+	background : #229954;
+	color : white;
+
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+
+input[type = "file"]::file-selector-button:active {
+	background-color: white;
+
+	color : #229954;
+}
+
+
+input[type = "file"] {
+	background : white;
+	color : #229954;
+
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+input[type = "file"], input[type = "file"]::file-selector-button {
+	width: 50%;
+	height : 5vh;
+
+	font-size :medium;
+
+	border : solid 1px #229954;
+}
+
+
+section#projet div#fichierTxt { width: 60%; }
+
+
+
+div#photo {
+	width : 30%;
+	height : 50vh;
+	background : white;
+
+	border : solid 1px #229954;
+
+	margin-left : 27%;
+
+	position: relative;
+}
+
+section#projet input[type = "file"]#fichierPhoto { display : none; }
+
+section#projet div#photo label#labelFichierPhoto {
+	position : absolute;
+	bottom : 0;
+	left : 0;
+
+	width : 94%;
+	text-align: center;
+	padding : 3% 0 3% 0;
+
+	background : #F5F5F5;
+
+	margin : 3%;
+
+	border-radius : 6px;
+
+	box-shadow: 0 0 5px #88888888;
+}
+
+
+section#projet div#photo label#labelFichierPhoto:active {
+	background : white;
+	color : #229954;
+
+	border : solid 1px #229954;
+}
+
+section#projet div#photo label#labelFichierPhotoSelect {
+	background : #229954;
+	color : white;
+}
+
+
+section#projet img {
+	width: 60%;
+	
+	margin : 8% 20% 0% 20%;
+
+	opacity: 0.7;
+}
 
 
 /* ------------------------------------ */

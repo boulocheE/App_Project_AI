@@ -50,3 +50,35 @@ function formulaireFichierTexte ( event, choix1, choix2 ) {
 	choix1 = document.getElementById( choix1 );
 	choix1.style.display = 'none';
 }
+
+
+
+
+function ouvrirSelecteurDeFichier() {
+	// Déclencher le clic sur l'élément input de type "file"
+	document.getElementById('fichierPhoto').click();
+}
+
+function afficherNomFichier() {
+	// Récupérer le nom du fichier sélectionné
+	var nomFichier = document.getElementById('fichierPhoto').files[0].name;
+
+	// Afficher le nom du fichier dans la console (ou vous pouvez l'afficher autre part)
+	console.log("Fichier sélectionné : " + nomFichier);
+}
+
+
+function recupImg() {
+	const input = document.getElementById('fichierPhoto');
+
+	// Vérifier si un fichier a été sélectionné
+	if (input.files.length > 0) {
+		// Récupérer le premier fichier sélectionné (si plusieurs fichiers sont autorisés)
+		const fichier = input.files[0];
+
+		// Utiliser FileSaver.js pour enregistrer le fichier
+		saveAs(fichier, 'nouveau_nom_image.jpg');
+	} else {
+		console.log("Aucun fichier sélectionné.");
+	}
+}

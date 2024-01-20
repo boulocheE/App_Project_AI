@@ -27,12 +27,12 @@
 		<nav id = "menu">
 
 			<ul>
-				<li> <a href = "../index.html"> <img src = "../images/maison.png" alt = 'Accueil'> HOME </a>  </li>
+				<li> <a href = "../index.html"> <img src = "../images/maison.png" alt = 'Accueil'> HOME </a> </li>
 
 				<li class = "partie choix"> <span> PARTIE 1 </span>
 					<ul>
-						<li                 > <a href = "texte.html"           > Texte </a> </li>
-						<li id = "choixPage"> <a href = "panneauxRoutiers.html"> Panneaux interface </a> </li>
+						<li id = "choixPage"> <a href = "texte.html"           > Texte </a> </li>
+						<li                 > <a href = "panneauxRoutiers.html"> Panneaux interface </a> </li>
 						<li> Panneaux 3 </li>
 						<li> Panneaux 4 </li>
 					</ul>
@@ -99,17 +99,30 @@
 
 		<section id = "projet">
 
-			<div id = "photo" onclick = "ouvrirSelecteurDeFichier()">
-				<img src = "../images/download.svg" alt = "download" id = "imgChoisie">
-
-				<input type="file" name = "file" id = "fichierPhoto">
-				<label id = "labelFichierPhoto"> Aucun fichier sélectionné </label>
+			<div class = "boutons">
+				<input type = "radio" id = "choixTxt"     name = "infosDoc" onclick = "formulaireFichierTexte(event, 'fichierTxt', 'zoneTexte')" checked>
+				<label> Zone de texte pour écrire </label>
 			</div>
 
-			<button type="button" onclick = "recupImg();">Récupérer la valeur</button>
+			<div id = 'zoneTexte'>
+				<input type="text" placeholder="Entrez une valeur ici" id="in">
+				<button type="button" onclick="getValue();">Récupérer la valeur</button>
+			</div>
+
+
+			<div class = "boutons">
+				<input type = "radio" id = "choixFichier" name = "infosDoc" onclick = "formulaireFichierTexte(event, 'zoneTexte', 'fichierTxt')">
+				<label> Partager un fichier <b>.txt</b> </label>
+			</div>
+
+
+			<div id = 'fichierTxt'>
+				<input type="file" name = "file" class = "inputfile">
+
+				<button type="button" onclick = "getValue();">Récupérer la valeur</button>
+			</div>
+
 		</section>
-
-
 
 
 	</body>
