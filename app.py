@@ -3,13 +3,48 @@ import os
 
 app = Flask(__name__)
 
+# dossier static : utilisation des images, js, css
+app.static_folder = 'static'
+
 # Dossier de téléchargement des images
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+
+
+# FICHIER HTML INDEX
 @app.route('/')
-def index():
+def index() :
 	return render_template('index.html')
+
+
+# PARTIE HTML INDEX
+@app.route('/pages/panneauxRoutiers')
+def pagePanneauxRoutiers() :
+	return render_template('pages/panneauxRoutiers.html')
+
+@app.route('/pages/texte')
+def pageTexte() :
+	return render_template('pages/texte.html')
+
+
+
+# PARTIE HTML PAGES EXTERNES
+@app.route('/')
+def retourPageIndex() :
+	return render_template('../index.html')
+
+@app.route('/pages/panneauxRoutiers')
+def retourPagePanneauxRoutiers() :
+	return render_template('panneauxRoutiers.html')
+
+@app.route('/pages/texte')
+def retourPageTexte() :
+	return render_template('texte.html')
+
+
+
+
 
 @app.route('/upload', methods=['POST'])
 def upload():

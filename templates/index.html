@@ -7,7 +7,7 @@
 		<meta charset = 'utf-8'>
 		<meta content = 'Author' lang = 'fr' name = 'BOULOCHE Eleonore'>
 
-		<link rel = 'stylesheet' href = "style.css" media = 'all' type = 'text/css'>
+		<link rel = 'stylesheet' href = "{{ url_for('static', filename='style.css') }}" media = 'all' type = 'text/css'>
 
 		<script src = "script.js"></script>
 	</head>
@@ -27,12 +27,12 @@
 		<nav id = "menu">
 
 			<ul>
-				<li id = "choixPage"> <a href = "index.html"> <img src = "images/maison.png" alt = 'Accueil'> HOME </a>  </li>
+				<li id = "choixPage"> <a href = "{{ url_for('pageIndex') }}"> <img src = "images/maison.png" alt = 'Accueil'> HOME </a>  </li>
 
 				<li class = "partie"> <span> PARTIE 1 </span>
 					<ul>
-						<li> <a href = "pages/texte.html"> Texte </a> </li>
-						<li> <a href = "pages/panneauxRoutiers.html"> Panneaux interface </a> </li>
+						<li> <a href = "{{ url_for('pageTexte')            }}"> Texte </a> </li>
+						<li> <a href = "{{ url_for('pagePanneauxRoutiers') }}"> Panneaux interface </a> </li>
 						<li> Panneaux 3 </li>
 						<li> Panneaux 4 </li>
 					</ul>
