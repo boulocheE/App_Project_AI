@@ -17,29 +17,16 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def index() :
 	return render_template('index.html')
 
+@app.route('/home')
+def pageHome() :
+	return render_template('home.html')
 
-# PARTIE HTML INDEX
-@app.route('/pages/panneauxRoutiers')
+@app.route('/panneauxRoutiers')
 def pagePanneauxRoutiers() :
-	return render_template('pages/panneauxRoutiers.html')
-
-@app.route('/pages/texte')
-def pageTexte() :
-	return render_template('pages/texte.html')
-
-
-
-# PARTIE HTML PAGES EXTERNES
-@app.route('/')
-def retourPageIndex() :
-	return render_template('../index.html')
-
-@app.route('/pages/panneauxRoutiers')
-def retourPagePanneauxRoutiers() :
 	return render_template('panneauxRoutiers.html')
 
-@app.route('/pages/texte')
-def retourPageTexte() :
+@app.route('/texte')
+def pageTexte() :
 	return render_template('texte.html')
 
 

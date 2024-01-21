@@ -27,12 +27,12 @@
 		<nav id = "menu">
 
 			<ul>
-				<li> <a href = "{{ url_for('retourPageIndex') }}"> <img src = "../images/maison.png" alt = 'Accueil'> HOME </a>  </li>
+				<li> <a href = "{{ url_for('pageHome') }}"> <img src = "{{ url_for('static', filename = 'images/maison.png') }}" alt = 'Accueil'> HOME </a>  </li>
 
 				<li class = "partie choix"> <span> PARTIE 1 </span>
 					<ul>
-						<li                 > <a href = "{{ url_for('retourPageTexte') }}"           > Texte </a> </li>
-						<li id = "choixPage"> <a href = "{{ url_for ('retourPagePanneauxRoutiers') }}"> Panneaux interface </a> </li>
+						<li                 > <a href = "{{ url_for('pageTexte'            ) }}"> Texte </a> </li>
+						<li id = "choixPage"> <a href = "{{ url_for ('pagePanneauxRoutiers') }}"> Panneaux interface </a> </li>
 						<li> Panneaux 3 </li>
 						<li> Panneaux 4 </li>
 					</ul>
@@ -100,7 +100,7 @@
 		<section id = "projet">
 
 			<div id = "photo" onclick = "ouvrirSelecteurDeFichier()">
-				<img src = "../images/download.svg" alt = "download" id = "imgChoisie">
+				<img src = "{{ url_for('static', filename = 'images/download.svg') }}" alt = "download" id = "imgChoisie">
 
 				<input type="file" name = "file" id = "fichierPhoto">
 				<label id = "labelFichierPhoto"> Aucun fichier sélectionné </label>
