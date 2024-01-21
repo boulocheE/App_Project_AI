@@ -1,35 +1,9 @@
-// script.js
+window.addEventListener('load', function () {
+	const div1 = document.getElementById('div1');
+	const div2 = document.getElementById('div2');
 
-// Fonction pour mettre à jour le message de nombre de mots manquants
-function updateWordCount() {
-	// Récupérer le contenu du textarea
-	var userInput = document.getElementById('inputUser').value;
-
-	// Supprimer les espaces en début et fin de texte
-	var trimmedText = userInput.trim();
-
-	// Diviser le texte en mots
-	var words = trimmedText.split(/\s+/);
-
-	// Définir le nombre de mots souhaité (ajustez selon vos besoins)
-	var desiredWordCount = 3;
-
-	// Calculer le nombre de mots manquants
-	var missingWords = Math.max(0, desiredWordCount - words.length);
-	
-	// Mettre à jour le message
-	document.getElementById('wordCountMessage').textContent = 'Nombre de mots manquants : ' + missingWords;
-}
-
-function test() {
-	document.getElementById('wordCountMessage').textContent = 'Nombre de mots manquants : ' + test;
-}
-
-// Ajouter un écouteur d'événement pour détecter les changements dans le textarea
-document.getElementById('inputUser').addEventListener('input', test);
-
-
-
+	div2.style.height = div1.offsetHeight - 20 + 'px';
+})
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -77,7 +51,7 @@ function changementEtat ( event, pageActuelle, pageSuivante, menu1, menu2 ) {
 }
 
 
-function formulaireFichierTexte ( event, choix1, choix2 ) {
+function formulaireFichierText ( event, choix1, choix2 ) {
 	choix2 = document.getElementById( choix2 );
 	choix2.style.display = 'block';
 
@@ -125,10 +99,10 @@ function validationErreur() {
 }
 
 
-function sendData() {
-	const res = document.getElementById('inputUser');
-	res.value = res.value	
-}
+// function sendData() {
+// 	const res = document.getElementById('inputUser').value;
+// 	res.value = res.value
+// }
 
 
 function deleteData() {

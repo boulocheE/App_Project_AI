@@ -51,7 +51,7 @@ a, a:visited {
 nav#menu {
 	position : fixed;
 
-	width: 10%;
+	width: 12%;
 
 	padding : 1% 1% 1% 0;
 }
@@ -137,9 +137,8 @@ div#parcours article {
 }
 
 
-div#parcours article.div3 {
-	width : 100%; }
-
+div#parcours article#div3 { width : calc( (48% - 2% - 14px) * 2 + 3% ); }
+div#parcours article#div3 strong { color : #229954; }
 
 div#parcours h2 {
 	padding : 8% 0 4% 0;
@@ -148,8 +147,16 @@ div#parcours h2 {
 }
 
 
-div#parcours article.div3 h2 { padding : 4% 0 2% 0; }
-div#parcours article.div3 hr { margin-bottom : 2%; }
+div#parcours article#div3 h2 { padding : 4% 0 2% 0; }
+div#parcours article#div3 hr { margin-bottom : 2%; }
+
+
+div#parcours article#div3 p { width : 100%; }
+
+div#parcours article#div3 li {
+	width : 70%;
+	margin : 1% 15% 0 15%;
+}
 
 
 
@@ -164,7 +171,7 @@ div#parcours article.div3 hr { margin-bottom : 2%; }
 
 div#contact {
 	width : 17%;
-	height : 100vh;
+	height : 200vh;
 
 	padding : 1%;
 
@@ -200,24 +207,6 @@ div#contact div figcaption {
 
 div#contact hr { margin : 8% 0 8% 0; }
 
-
-
-/* section#parcours {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.div1 {
-	flex: 1 0 calc( 48% - 2% - 3% - 4px );
-}
-
-.div2, .div3, .div4 {
-	flex: 1 calc( 48% - 2% - 3% - 4px );
-}
-
-.div3 {
-	align-self: flex-start;
-} */
 
 
 

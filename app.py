@@ -25,9 +25,9 @@ def index() :
 def pagePanneauxRoutiers() :
 	return render_template('pages/panneauxRoutiers.html')
 
-@app.route('/pages/texte')
-def pageTexte() :
-	return render_template('pages/texte.html')
+@app.route('/pages/text')
+def pageText() :
+	return render_template('pages/text.html')
 
 
 
@@ -73,31 +73,31 @@ def uploadFileTxt() :
 
 			res = main("file")
 
-			return render_template ( 'pages/texte.html', resultat = res )
+			return render_template ( 'pages/text.html', resultat = res )
 
 
-	return render_template ( 'pages/texte.html', resultat = "Error while downloading" )
+	return render_template ( 'pages/text.html', resultat = "Error while downloading" )
 
 
 
 @app.route('/uploadTxt', methods = ['POST'])
 def uploadTxt() :
 	if 'text' in request.form:
-		texte = request.form['text']
+		text = request.form['text']
 
-		if len(texte.split()) <= 3 :
-			return render_template('pages/texte.html', erreur = "Your text must contain at least 4 words. Try again.")
+		if len(text.split()) <= 3 :
+			return render_template('pages/text.html', erreur = "Your text must contain at least 4 words. Try again.")
 
-		if len(texte.split()) > 100 :
-			return render_template('pages/texte.html', erreur = "Your text must contain less than 100 words. Try again.")
-
-
-		res = main(texte)
+		if len(text.split()) > 100 :
+			return render_template('pages/text.html', erreur = "Your text must contain less than 100 words. Try again.")
 
 
-		return render_template('pages/texte.html', resultat = res)
+		res = main(text)
 
-	return render_template( 'pages/texte.html', erreur = "Failure in the sending process. Try again." )
+
+		return render_template('pages/text.html', resultat = res)
+
+	return render_template( 'pages/text.html', erreur = "Failure in the sending process. Try again." )
 
 
 

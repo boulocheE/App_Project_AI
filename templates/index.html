@@ -30,39 +30,37 @@
 			<ul>
 				<li id = "choixPage"> <a href = "{{ url_for('index') }}"> <img src = "{{ url_for('static', filename = 'images/maison.png') }}" alt = 'Accueil'> HOME </a>  </li>
 
-				<li class = "partie"> <span> PARTIE 1 </span>
+				<li class = "partie"> <span> MAIN PROJECTS </span>
 					<ul>
-						<li> <a href = "{{ url_for('pageTexte') }}"> Texte </a> </li>
-						<li> <a href = "{{ url_for('pagePanneauxRoutiers') }}"> Panneaux interface </a> </li>
-						<li> Panneaux 3 </li>
-						<li> Panneaux 4 </li>
+						<li> <a href = "{{ url_for('pageText') }}"> Text classification </a> </li>
+						<li> <a href = "{{ url_for('pagePanneauxRoutiers') }}"> Road sign recognition </a> </li>
 					</ul>
 				</li>
 
-				<li class = "partie"> <span> PARTIE 2 </span>
+				<li class = "partie"> <span> PART 1 </span>
 					<ul>
-						<li> Texte 1 </li>
-						<li> Texte 2 </li>
-						<li> Texte 3 </li>
-						<li> Texte 4 </li>
+						<li> Text 1 </li>
+						<li> Text 2 </li>
+						<li> Text 3 </li>
+						<li> Text 4 </li>
 					</ul>
 				</li>
 
-				<li class = "partie"> <span> PARTIE 3 </span>
+				<li class = "partie"> <span> PART 2 </span>
 					<ul>
-						<li> Texte 5 </li>
-						<li> Texte 6 </li>
-						<li> Texte 7 </li>
-						<li> Texte 8 </li>
+						<li> Text 5 </li>
+						<li> Text 6 </li>
+						<li> Text 7 </li>
+						<li> Text 8 </li>
 					</ul>
 				</li>
 
-				<li class = "partie"> <span> PARTIE 4 </span>
+				<li class = "partie"> <span> PART 3 </span>
 					<ul>
-						<li> Texte 9 </li>
-						<li> Texte 10 </li>
-						<li> Texte 11 </li>
-						<li> Texte 12 </li>
+						<li> Text 9 </li>
+						<li> Text 10 </li>
+						<li> Text 11 </li>
+						<li> Text 12 </li>
 					</ul>
 				</li>
 			</ul>
@@ -74,8 +72,8 @@
 		<!-- Explication de son parcours, etc -->
 		<div id = "parcours">
 
-			<article class = "div1">
-				<h2> Parcours #1 </h2>
+			<article id = "div1">
+				<h2> Welcome </h2>
 
 				<hr>
 
@@ -102,8 +100,8 @@
 			</article>
 
 
-			<article class = "div2">
-				<h2> Parcours #2 </h2>
+			<article id = "div2">
+				<h2> About myself </h2>
 
 				<hr>
 
@@ -125,14 +123,15 @@
 			</article>
 
 
-			<article class = "div3">
-				<h2> Parcours #3 </h2>
+			<article id = "div3">
+				<h2> Course syllabus </h2>
 
 				<hr>
 
 				<p>
-					During the "Artificial Intelligence in Data Science" course, I had the chance to delve into numerous facets of programming, each offering a unique perspective and set of skills. The course covered a broad range of topics, including:
+					During the "Artificial Intelligence in Data Science" course, I had the chance to delve into numerous facets of programming, each offering a unique perspective and set of skills. The course covered a broad range of topics, including : <br><br>
 				</p>
+
 				<ul>
 					<li><strong>Statistical Overview:</strong> A foundational understanding of statistics in the context of AI.</li>
 					<li><strong>Image Segmentation and Recognition:</strong> Focused on tasks like car plate recognition and number recognition, applying advanced image processing techniques.</li>
@@ -147,8 +146,9 @@
 					<li><strong>Handling Textual and Sequential Data:</strong> Projects included predicting missing words from Harry Potter sentences and advanced synonym analysis, as well as using LSTM for airline and word prediction, and temperature prediction.</li>
 					<li><strong>Unsupervised Learning and Decision Trees:</strong> Focusing on techniques like random forest and other unsupervised learning methods.</li>
 				</ul>
+
 				<p>
-					This comprehensive curriculum not only enhanced my technical prowess in various AI domains but also provided a holistic view of how these technologies can be applied in diverse scenarios.
+					<br>This comprehensive curriculum not only enhanced my technical prowess in various AI domains but also provided a holistic view of how these technologies can be applied in diverse scenarios.
 				</p>
 			</article>
 
