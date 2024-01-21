@@ -116,3 +116,10 @@ function recupImg() {
 		console.log("Aucun fichier sélectionné.");
 	}
 }
+
+
+
+function validationErreur() {
+	const divErr = document.getElementById('error');
+	divErr.style.display = 'none';
+}

@@ -337,13 +337,13 @@ input[type = "submit"]:active, input[type = "reset"]:active {
 }
 
 textarea {
-	width : 70%;
+	width : 60%;
 	height: 20vh;
 
 	border : solid 1px #88888888;
 	border-radius: 3px;
 
-	margin : 2% 10% 2% 10%;
+	margin : 2% 10% 2% 5%;
 
 	padding : 2%;
 }
@@ -446,6 +446,67 @@ section#projet img {
 
 	opacity: 0.7;
 }
+
+
+/* Gestion des notifications d'erreurs */
+div#error {
+	width: 30%;
+	/* height: 15vh; */
+
+	background : white;
+
+	border: solid 1px #229954;
+	border-radius: 5px;
+
+	text-align: center;
+
+	position : fixed;
+	top : 45%;
+	left : 35%;
+
+	display: none;
+}
+
+div#error p {
+	margin : 5% 0 5% 0;
+}
+
+div#error button {
+	width : 80%;
+
+	padding : 3%;
+	margin : 0 10% 5% 10%;
+
+	color : white;
+
+	background : #229954;
+
+	border : solid 1px #229954;
+	border-radius: 5px;
+}
+
+
+div#error button:active {
+	background : white;
+	color : #229954;
+}
+
+
+
+div#resultat {
+	position : fixed;
+	right : 3%;
+	top : 54%;
+
+	width : 20%;
+	height: calc(20vh + 4%);
+
+	border : solid 1px #229954;
+	border-radius: 3px;
+
+	background: white;
+}
+
 
 
 
