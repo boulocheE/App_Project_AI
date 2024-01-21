@@ -49,9 +49,9 @@ def uploadPhoto():
 			# Enregistrez le fichier dans le dossier d'upload avec un nouveau nom si nécessaire
 			chemin_enregistrement = os.path.join(app.config['UPLOAD_FOLDER'], 'in.png')
 			fichier.save(chemin_enregistrement)
-			return 'Téléchargement réussi !'
+			return render_template ( 'pages/panneauxRoutiers.html', resultat = 'OK' )
 
-	return 'Échec du téléchargement.'
+	return render_template ( 'pages/panneauxRoutiers.html', erreur = 'Échec du téléchargement.' )
 
 
 

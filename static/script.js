@@ -123,3 +123,19 @@ function validationErreur() {
 	const divErr = document.getElementById('error');
 	divErr.style.display = 'none';
 }
+
+
+function sendData() {
+	const res = document.getElementById('inputUser');
+	res.value = res.value	
+}
+
+
+function deleteData() {
+	const res = document.getElementById('resultat');
+	const tab = res.querySelectorAll('p');
+
+	// tab[0].innerText = '';
+	tab[0].innerText = '--, --%';
+	tab[1].innerText = '--, --%';
+}

@@ -102,9 +102,13 @@
 			<form action = "/uploadPhoto" method = "post" enctype = "multipart/form-data">
 
 				<div id = "photo" onclick = "ouvrirSelecteurDeFichier()">
-						<img src = "{{ url_for('static', filename = 'images/download.svg') }}" alt = "download" id = "imgChoisie">
+						{% if resultat %}
+							<img src = "{{ url_for('static', filename = 'images/mail.png') }}" alt = "res de la photo" class = "imgChoisie">
+						{% else %}
+							<img src = "{{ url_for('static', filename = 'images/download.svg') }}" alt = "download" class = "imgChoisie">
+						{% endif %}
 
-						<input type = "file" name = "image" id = "fichierPhoto" accept = ".jpeg, .png, .jpg">
+						<input type = "file" name = "image" id = "fichierPhoto" accept = ".jpeg, .png, .jpg, .svg">
 						<label id = "labelFichierPhoto"> Aucun fichier sélectionné </label>
 				</div>
 
@@ -112,6 +116,14 @@
 				<input type = "reset"  value = "Reset">
 			</form>
 
+
+			{% if erreur %}
+				<div id = 'error'>
+					<p> {{erreur}} </p>
+
+					<button onclick = "validationErreur()"> OK </button>
+				</div>
+			{% endif %}
 
 
 		</section>

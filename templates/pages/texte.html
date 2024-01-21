@@ -125,18 +125,24 @@
 					<input type="file" name = "file" class = "inputfile" accept = ".txt">
 
 					<input type = "submit" value = "Send">
-					<input type = "reset"  value = "Reset">
+					<input type = "reset"  value = "Reset" onclick = "deleteData()">
 				</form>
 			</div>
 
-			<div id = 'error'>
-				<p> {{erreur}} </p>
+			{% if erreur %}
+				<div id = 'error'>
+					<p> {{erreur}} </p>
 
-				<button onclick = "validationErreur()"> OK </button>
-			</div>
+					<button onclick = "validationErreur()"> OK </button>
+				</div>
+			{% endif %}
 
 			<div id = 'resultat'>
-				<p> {{resultat}} </p>
+				{% if resultat %}
+					<p> {{resultat}}% </p>
+				{% else %}
+					<p> --, --% </p>
+				{% endif %}
 			</div>
 
 		</section>
