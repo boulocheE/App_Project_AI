@@ -86,14 +86,18 @@ def uploadTxt() :
 		texte = request.form['text']
 
 		if len(texte.split()) <= 3 :
-			return render_template('pages/texte.html', resultat = "Vous n'avez entré que ")
+			return render_template('pages/texte.html', erreur = "Your text must contain at least 4 words. Try again.")
+
+		if len(texte.split()) > 100 :
+			return render_template('pages/texte.html', erreur = "Your text must contain less than 100 words. Try again.")
 
 
 		res = main(texte)
 
+
 		return render_template('pages/texte.html', resultat = res)
 
-	return 'Échec du traitement du texte.'
+	return render_template( 'pages/texte.html', erreur = "Failure in the sending process. Try again." )
 
 
 
