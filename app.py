@@ -46,9 +46,12 @@ def uploadPhoto():
 			if not os.path.exists(app.config['UPLOAD_FOLDER']):
 				os.makedirs(app.config['UPLOAD_FOLDER'])
 
+
 			# Enregistrez le fichier dans le dossier d'upload avec un nouveau nom si nécessaire
 			chemin_enregistrement = os.path.join(app.config['UPLOAD_FOLDER'], 'in.png')
 			fichier.save(chemin_enregistrement)
+
+
 			return render_template ( 'pages/panneauxRoutiers.html', resultat = 'OK' )
 
 	return render_template ( 'pages/panneauxRoutiers.html', erreur = 'Échec du téléchargement.' )

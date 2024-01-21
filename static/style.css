@@ -383,21 +383,28 @@ section#projet div#fichierTxt { width: 60%; }
 
 
 
-div#photo {
+div.divPhoto {
+	float : left;
 	width : 30%;
 	height : 50vh;
+
 	background : white;
 
 	border : solid 1px #229954;
 
-	margin-left : 27%;
+	margin : 0 2% 0 5%;
+}
 
+
+div.photo {
+	width : 100%;
+	height : 50vh;
 	position: relative;
 }
 
 section#projet input[type = "file"]#fichierPhoto { display : none; }
 
-section#projet div#photo label#labelFichierPhoto {
+section#projet div.photo label#labelFichierPhoto, section#projet div.photo label#labelFichierPhotoRes {
 	position : absolute;
 	bottom : 0;
 	left : 0;
@@ -416,14 +423,14 @@ section#projet div#photo label#labelFichierPhoto {
 }
 
 
-section#projet div#photo label#labelFichierPhoto:active {
+section#projet div.photo label#labelFichierPhoto:active {
 	background : white;
 	color : #229954;
 
 	border : solid 1px #229954;
 }
 
-section#projet div#photo label#labelFichierPhotoSelect {
+section#projet div.photo label#labelFichierPhotoSelect {
 	background : #229954;
 	color : white;
 }
@@ -431,10 +438,8 @@ section#projet div#photo label#labelFichierPhotoSelect {
 
 section#projet img {
 	width: 60%;
-	
-	margin : 8% 20% 0% 20%;
 
-	opacity: 0.7;
+	margin : 8% 20% 0% 20%;
 }
 
 
@@ -502,6 +507,48 @@ div#resultat {
 
 div#resultat p { margin-top : 12%; }
 
+
+
+img.attentePhoto { opacity : 0.7; }
+
+
+section#compteRendu h3 {
+	padding : 1% 1% 0 1%;
+
+	font-size : 150%;
+
+	margin-left : 15%;
+}
+
+
+section#compteRendu h3:not(:first-of-type) { margin-top : 5%; }
+section#compteRendu {
+	padding : 0 3% 3% 3%;
+
+	text-align: justify;
+}
+
+section#compteRendu li { margin-bottom : 1%; }
+
+section#compteRendu hr {
+	width : 80%;
+
+	margin : 1% 0 2% 10%;
+	padding : 0;
+}
+
+section#compteRendu strong { color : #229954; }
+
+section#compteRendu a {
+	text-decoration: underline;
+
+	color : #348d59;
+}
+
+section#compteRendu a:visited {
+	color : #06652e;
+	font-weight: 300;
+}
 
 
 

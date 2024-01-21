@@ -36,32 +36,9 @@
 					</ul>
 				</li>
 
-				<li class = "partie"> <span> PARTIE 2 </span>
-					<ul>
-						<li> Text 1 </li>
-						<li> Text 2 </li>
-						<li> Text 3 </li>
-						<li> Text 4 </li>
-					</ul>
-				</li>
-
-				<li class = "partie"> <span> PARTIE 3 </span>
-					<ul>
-						<li> Text 5 </li>
-						<li> Text 6 </li>
-						<li> Text 7 </li>
-						<li> Text 8 </li>
-					</ul>
-				</li>
-
-				<li class = "partie"> <span> PARTIE 4 </span>
-					<ul>
-						<li> Text 9 </li>
-						<li> Text 10 </li>
-						<li> Text 11 </li>
-						<li> Text 12 </li>
-					</ul>
-				</li>
+				<li class = "partie"> <span> PARTIE 2 </span> </li>
+				<li class = "partie"> <span> PARTIE 3 </span> </li>
+				<li class = "partie"> <span> PARTIE 4 </span> </li>
 			</ul>
 
 		</nav>
@@ -71,8 +48,8 @@
 		<div class = "page">
 			<nav>
 				<ul>
-					<li id = "menuCR"                 onclick = "changementEtat(event, 'projet', 'compteRendu', 'menuPr', 'menuCR')"> Compte-rendu </li>
-					<li id = "menuPr" class = "choix" onclick = "changementEtat(event, 'compteRendu', 'projet', 'menuCR', 'menuPr')"> Projet       </li>
+					<li id = "menuCR"                 onclick = "changementEtat(event, 'projet', 'compteRendu', 'menuPr', 'menuCR')"> Report  </li>
+					<li id = "menuPr" class = "choix" onclick = "changementEtat(event, 'compteRendu', 'projet', 'menuCR', 'menuPr')"> Project </li>
 				</ul>
 			</nav>
 
@@ -81,17 +58,111 @@
 
 
 		<section id = "compteRendu">
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-				incididunt ut labore et dolore magna aliqua. Pulvinar etiam non quam lacus suspendisse 
-				faucibus interdum. In cursus turpis massa tincidunt dui ut ornare lectus. 
-				Ac tortor dignissim convallis aenean et tortor at. Pretium lectus quam id leo in. 
-				Malesuada fames ac turpis egestas integer. Cras fermentum odio eu feugiat 
-				pretium nibh. Tortor vitae purus faucibus ornare suspendisse. 
-				Eget egestas purus viverra accumsan. Mattis pellentesque id nibh tortor 
-				id aliquet lectus proin. Non enim praesent elementum facilisis leo. Sed risus 
-				ultricies tristique nulla aliquet enim tortor at auctor.
-			</p>
+			<h3>Introduction</h3>
+
+			<hr>
+
+			<p>Welcome to the <strong>Final Project</strong> for the <em>Artificial Intelligence in Data Science</em> course. This project is unique as it allows students to choose their subject. After a full semester of exploring Artificial Intelligence using Python, with extensive experience in image processing, I ventured through various projects—from <strong>car plate number recognition</strong> to <strong>road sign recognition</strong> and <strong>classification</strong>, including the traditional MNIST dataset classification. For this project, I've chosen to focus on <strong>N</strong>atural <strong>L</strong>anguage <strong>P</strong>rocessing, or <strong>NLP</strong>.</p>
+
+			<h3>NLP</h3>
+
+			<hr>
+
+			<p><strong>N</strong>atural <strong>L</strong>anguage <strong>P</strong>rocessing involves several steps: <br><br> </p>
+
+			<ol>
+				<li>Data Collection</li>
+				<li>Text Preprocessing</li>
+				<li>Tokenization</li>
+				<li>Normalization</li>
+				<li>Lemmatization &amp; Stemming</li>
+				<li>Removing Stop Words</li>
+				<li>Handling Special Characters and Punctuation</li>
+				<li>Word Embeddings</li>
+				<li>Model Training</li>
+				<li>Model Evaluation (confusion matrix, <code>val_loss</code> value, etc.)</li>
+			</ol>
+
+			<h3>Dataset Source</h3>
+
+			<hr>
+
+			<p>I began by exploring available datasets on Kaggle for this classification task, considering several options: <br><br> </p>
+			
+			<ul>
+				<li><a href="https://www.kaggle.com/datasets/thedevastator/boolq-dataset-consistent-data-fields">BoolQ</a></li>
+				<li><a href="https://www.kaggle.com/datasets/stackoverflow/stacksample">Stack Overflow Sample</a></li>
+				<li><a href="https://www.kaggle.com/datasets/stackoverflow/pythonquestions/data">Stack Overflow Python Questions</a></li>
+				<li><a href="https://www.kaggle.com/datasets/rtatman/questionanswer-dataset">Question &amp; Answer Dataset</a></li>
+				<li><a href="https://www.kaggle.com/datasets/prajwaldongre/llm-detect-ai-generated-vs-student-generated-text">AI Text vs Student Text</a></li>
+			</ul>
+			
+			<p>However, <a href="https://www.kaggle.com/datasets/thedevastator/hate-speech-and-offensive-language-detection">this dataset</a> particularly caught my attention. It includes a file named <a href="https://github.com/antoineMontier/NLP/tree/main/archive/train.csv">train.csv</a>, containing columns such as: <br><br> </p>
+			
+			<ul>
+				<li><code>count</code>: Total number of annotations for each tweet (Integer).</li>
+				<li><code>hate_speech_count</code>: Number of annotations classifying a tweet as hate speech (Integer).</li>
+				<li><code>offensive_language_count</code>: Number of annotations classifying a tweet as offensive language (Integer).</li>
+				<li><code>neither_count</code>: Number of annotations classifying a tweet as neither hate speech nor offensive language (Integer).</li>
+				<li><code>tweet</code>: The actual tweet in full text (String).</li>
+			</ul>
+			
+			<p>The goal is to classify tweets as hateful/offensive or not.</p>
+			
+			<h3>Classification Process</h3>
+
+			<hr>
+
+			<p>The challenging part was trying various <strong>approaches</strong>: <br><br> </p>
+			
+			<ul>
+				<li>Deep Learning</li>
+				<li>CNN</li>
+				<li>LSTM</li>
+				<li>Embedding</li>
+				<li>SVM</li>
+				<li>Logistic Regression</li>
+			</ul>
+			
+			<h3>From Scratch Notebook</h3>
+
+			<hr>
+
+			<p>Click <a href="https://github.com/antoineMontier/NLP/tree/main/nlp_from_scratch.ipynb">here</a> to explore how I achieved high accuracy: <br><br> </p>
+			
+			<p><img src="https://github.com/antoineMontier/NLP/tree/main/output.png" alt="Confusion Matrix"></p>
+			
+			<h3>Under the Iceberg</h3>
+
+			<hr>
+
+			<p>Here is the rest, which makes up <strong>90%</strong> of my work:<br></p>
+			
+			<ul>
+				<li><a href="https://github.com/antoineMontier/NLP/tree/main/chat.ipynb">chat.ipynb</a>: This notebook is where I started my experiments, figuring out some traditional TensorFlow &amp; Keras models. I tried using <code>Embedding</code> and <code>LSTM</code> layers after preprocessing the data. However, I encountered a significant challenge with <strong>data imbalance</strong> (approximately 80% of the tweets were not hateful). In this notebook, I also explored <strong>word tags</strong> (identifying whether a word is a noun, an adjective, etc.). I pondered on what kind of input structure to use for the model, such as:</li>
+				<li>An array like: [$stem_0$, $tag_0$, $stem_1$, $tag_1$, ..., $stem_n$, $tag_n$]</li>
+				<li>Or an array like: [$stem_0$, $stem_1$, ..., $stem_n$, $tag_0$, $tag_1$, ..., $tag_n$]</li>
+				<li>Or two separate arrays: one for stem codes and one for tag codes.</li>
+			</ul>
+			
+			<p>Although <a href="https://github.com/antoineMontier/NLP/tree/main/chat.ipynb">chat.ipynb</a> didn’t yield the expected results, it laid the foundation for subsequent notebooks.</p>
+			
+			<ul>
+				<li><a href="https://github.com/antoineMontier/NLP/tree/main/predict.ipynb">predict.ipynb</a>: Here, I loaded a model to make predictions, but it turned out to be more <strong>random</strong> than accurate.</li>
+				<li><a href="https://github.com/antoineMontier/NLP/tree/main/test.ipynb">test.ipynb</a>: Chat-GPT provided a skeleton architecture for my project in this notebook. Some of its ideas were interesting, but there were many issues (incorrect preprocessing, word padding, and a peculiar model architecture). In this model, I learned about an <strong>effective approach to address data imbalance</strong>: using <code>compute_class_weight</code> from <code>sklearn.utils</code>. This approach worked better than the one in <a href="https://github.com/antoineMontier/NLP/tree/main/chat.ipynb">chat.ipynb</a> but was still somewhat random in its predictions.</li>
+				<li><a href="https://github.com/antoineMontier/NLP/tree/main/text-CNN.ipynb">text-CNN.ipynb</a>: Influenced by <a href="https://www.youtube.com/watch?v=MsL79ZIqWpg">this video</a>, I experimented with <strong>NLP using CNN</strong>. I incorporated some functions from previous notebooks and used callbacks during training to save the model's progress. However, the results weren’t as good as I had hoped. The model's accuracy was lacking. I suspected its architecture might have caused it to focus on incorrect data or specific words/word sequences. As I was inexperienced with using CNN for NLP, I decided not to continue modifying this model and shifted my focus to other classification methods.</li>
+				<li><a href="https://github.com/antoineMontier/NLP/tree/main/bert.ipynb">bert.ipynb</a>: In this notebook, I attempted to use BERT (<strong>B</strong>idirectional <strong>E</strong>ncoder <strong>R</strong>epresentations from <strong>T</strong>ransformers), developed by Google. My research indicated that BERT is incredibly powerful, currently employed in search engines. However, it seemed <strong>too powerful for my task</strong>, so I decided not to pursue it further.</li>
+				<li><a href="https://github.com/antoineMontier/NLP/tree/main/nlp_grid_search.ipynb">nlp_grid_search.ipynb</a>: I explored using random forests in this notebook but struggled with model accuracy. I consulted Chat-GPT for advice on improving the model and was introduced to the concepts of <strong>grid search</strong> and <strong>cross-validation</strong>, areas I was not familiar with. Despite implementing these techniques, the results were disappointing. It appeared the model didn’t learn effectively, as evidenced by the following confusion matrix:<br>
+				<img src="https://github.com/antoineMontier/NLP/tree/main/output-2.png" alt="Confusion Matrix"></li>
+				<li>In <a href="https://github.com/antoineMontier/NLP/tree/main/nlp_from_scratch_2cat.ipynb">nlp_from_scratch_2cat.ipynb</a> and <a href="https://github.com/antoineMontier/NLP/tree/main/nlp_from_scratch_3cat.ipynb">nlp_from_scratch_3cat.ipynb</a>, I experimented with <strong>SVM</strong> and <strong>logistic regression</strong>. The SVM model required approximately 2 hours for training and did not yield accurate results. In <a href="https://github.com/antoineMontier/NLP/tree/main/nlp_word_influence.ipynb">nlp_word_influence.ipynb</a>, I explored the influence of specific words in the SVM model and discovered that words like *thewalkingdead* were being misinterpreted, leading to incorrect classifications. Adjusting the model proved time-consuming, so I shifted my focus to logistic regression.</li>
+				<li>The logistic regression model, trained in just 8 seconds, showed promise. With some precision adjustments (like setting a threshold of $0.2$), I achieved a test accuracy of 93%, which I considered sufficient. This success demonstrated that sometimes simpler models can be more effective for certain tasks.</li>
+			</ul>
+			
+			<h3>User Script</h3>
+
+			<hr>
+
+			<p>A user script is available for running and viewing <a href="https://github.com/antoineMontier/NLP/tree/main/nlp_from_scratch.py">here</a>.</p>
 		</section>
 
 
@@ -99,7 +170,7 @@
 
 			<div class = "boutons">
 				<input type = "radio" id = "choixTxt"     name = "infosDoc" onclick = "formulaireFichierText(event, 'fichierTxt', 'zoneText')" checked>
-				<label> Zone de text pour écrire </label>
+				<label> Write here </label>
 			</div>
 
 			<div id = 'zoneText'>
@@ -114,7 +185,7 @@
 
 			<div class = "boutons">
 				<input type = "radio" id = "choixFichier" name = "infosDoc" onclick = "formulaireFichierText(event, 'zoneText', 'fichierTxt')">
-				<label> Partager un fichier <b>.txt</b> </label>
+				<label> Share your file <b>.txt</b> </label>
 			</div>
 
 
