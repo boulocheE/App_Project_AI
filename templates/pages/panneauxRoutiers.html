@@ -27,7 +27,7 @@
 		<nav id = "menu">
 
 			<ul>
-				<li> <a href = "{{ url_for('pageHome') }}"> <img src = "{{ url_for('static', filename = 'images/maison.png') }}" alt = 'Accueil'> HOME </a>  </li>
+				<li> <a href = "{{ url_for('index') }}"> <img src = "{{ url_for('static', filename = 'images/maison.png') }}" alt = 'Accueil'> HOME </a>  </li>
 
 				<li class = "partie choix"> <span> PARTIE 1 </span>
 					<ul>
@@ -73,8 +73,8 @@
 		<div class = "page">
 			<nav>
 				<ul>
-					<li id = "menuCR" class = "choix" onclick = "changementEtat(event, 'projet', 'compteRendu', 'menuPr', 'menuCR')"> Compte-rendu </li>
-					<li id = "menuPr"                 onclick = "changementEtat(event, 'compteRendu', 'projet', 'menuCR', 'menuPr')"> Projet       </li>
+					<li id = "menuCR"                 onclick = "changementEtat(event, 'projet', 'compteRendu', 'menuPr', 'menuCR')"> Compte-rendu </li>
+					<li id = "menuPr" class = "choix" onclick = "changementEtat(event, 'compteRendu', 'projet', 'menuCR', 'menuPr')"> Projet       </li>
 				</ul>
 			</nav>
 
@@ -99,14 +99,21 @@
 
 		<section id = "projet">
 
-			<div id = "photo" onclick = "ouvrirSelecteurDeFichier()">
-				<img src = "{{ url_for('static', filename = 'images/download.svg') }}" alt = "download" id = "imgChoisie">
+			<form action = "/uploadPhoto" method = "post" enctype = "multipart/form-data">
 
-				<input type="file" name = "file" id = "fichierPhoto">
-				<label id = "labelFichierPhoto"> Aucun fichier sélectionné </label>
-			</div>
+				<div id = "photo" onclick = "ouvrirSelecteurDeFichier()">
+						<img src = "{{ url_for('static', filename = 'images/download.svg') }}" alt = "download" id = "imgChoisie">
 
-			<button type="button" onclick = "recupImg();">Récupérer la valeur</button>
+						<input type = "file" name = "image" id = "fichierPhoto" accept = ".jpeg, .png, .jpg">
+						<label id = "labelFichierPhoto"> Aucun fichier sélectionné </label>
+				</div>
+
+				<input type = "submit" value = "Send">
+				<input type = "reset"  value = "Reset">
+			</form>
+
+
+
 		</section>
 
 

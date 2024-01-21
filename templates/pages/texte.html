@@ -27,7 +27,7 @@
 		<nav id = "menu">
 
 			<ul>
-				<li> <a href = "{{ url_for('pageHome') }}"> <img src = "{{ url_for('static', filename = 'images/maison.png') }}" alt = 'Accueil'> HOME </a> </li>
+				<li> <a href = "{{ url_for('index') }}"> <img src = "{{ url_for('static', filename = 'images/maison.png') }}" alt = 'Accueil'> HOME </a> </li>
 
 				<li class = "partie choix"> <span> PARTIE 1 </span>
 					<ul>
@@ -73,8 +73,8 @@
 		<div class = "page">
 			<nav>
 				<ul>
-					<li id = "menuCR" class = "choix" onclick = "changementEtat(event, 'projet', 'compteRendu', 'menuPr', 'menuCR')"> Compte-rendu </li>
-					<li id = "menuPr"                 onclick = "changementEtat(event, 'compteRendu', 'projet', 'menuCR', 'menuPr')"> Projet       </li>
+					<li id = "menuCR"                 onclick = "changementEtat(event, 'projet', 'compteRendu', 'menuPr', 'menuCR')"> Compte-rendu </li>
+					<li id = "menuPr" class = "choix" onclick = "changementEtat(event, 'compteRendu', 'projet', 'menuCR', 'menuPr')"> Projet       </li>
 				</ul>
 			</nav>
 
@@ -105,8 +105,12 @@
 			</div>
 
 			<div id = 'zoneTexte'>
-				<input type="text" placeholder="Entrez une valeur ici" id="in">
-				<button type="button" onclick="getValue();">Récupérer la valeur</button>
+				<form action = "/uploadTxt" method = "post" enctype = "multipart/form-data">
+					<textarea name = "text" type = "text" placeholder = "Write your sentence here..." id = "inputUser"></textarea>
+
+					<input type = "submit" value = "Send">
+					<input type = "reset"  value = "Reset">
+				</form>
 			</div>
 
 
@@ -117,10 +121,17 @@
 
 
 			<div id = 'fichierTxt'>
-				<input type="file" name = "file" class = "inputfile">
+				<form action = "/uploadFileTxt" method = "post" enctype = "multipart/form-data">
+					<input type="file" name = "file" class = "inputfile" accept = ".txt">
 
-				<button type="button" onclick = "getValue();">Récupérer la valeur</button>
+					<input type = "submit" value = "Send">
+					<input type = "reset"  value = "Reset">
+				</form>
 			</div>
+
+			<p> {{alert}} </p>
+
+			<p> {{resultat}} </p>
 
 		</section>
 

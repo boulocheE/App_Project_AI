@@ -1,3 +1,37 @@
+// script.js
+
+// Fonction pour mettre à jour le message de nombre de mots manquants
+function updateWordCount() {
+	// Récupérer le contenu du textarea
+	var userInput = document.getElementById('inputUser').value;
+
+	// Supprimer les espaces en début et fin de texte
+	var trimmedText = userInput.trim();
+
+	// Diviser le texte en mots
+	var words = trimmedText.split(/\s+/);
+
+	// Définir le nombre de mots souhaité (ajustez selon vos besoins)
+	var desiredWordCount = 3;
+
+	// Calculer le nombre de mots manquants
+	var missingWords = Math.max(0, desiredWordCount - words.length);
+	
+	// Mettre à jour le message
+	document.getElementById('wordCountMessage').textContent = 'Nombre de mots manquants : ' + missingWords;
+}
+
+function test() {
+	document.getElementById('wordCountMessage').textContent = 'Nombre de mots manquants : ' + test;
+}
+
+// Ajouter un écouteur d'événement pour détecter les changements dans le textarea
+document.getElementById('inputUser').addEventListener('input', test);
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
 	var header = document.getElementById('header');
 

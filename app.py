@@ -1,5 +1,9 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import os
+
+
+from Natural_language_processing.nlp_from_scratch import *
+
 
 app = Flask(__name__)
 
@@ -17,40 +21,81 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def index() :
 	return render_template('index.html')
 
-@app.route('/home')
-def pageHome() :
-	return render_template('home.html')
-
-@app.route('/panneauxRoutiers')
+@app.route('/pages/panneauxRoutiers')
 def pagePanneauxRoutiers() :
-	return render_template('panneauxRoutiers.html')
+	return render_template('pages/panneauxRoutiers.html')
 
-@app.route('/texte')
+@app.route('/pages/texte')
 def pageTexte() :
-	return render_template('texte.html')
+	return render_template('pages/texte.html')
 
 
 
 
 
-@app.route('/upload', methods=['POST'])
-def upload():
-	# Vérifier si le formulaire contient un fichier
+@app.route('/uploadPhoto', methods = ['POST'])
+def uploadPhoto():
+	# Vérifier si le formulaire contient une image
 	if 'image' in request.files:
 		fichier = request.files['image']
-		
+
+
 		# Vérifier si le fichier a un nom et est autorisé
 		if fichier.filename != '' and fichier.filename.endswith(('.jpg', '.jpeg', '.png')):
 			# Assurez-vous que le dossier d'upload existe, sinon créez-le
 			if not os.path.exists(app.config['UPLOAD_FOLDER']):
 				os.makedirs(app.config['UPLOAD_FOLDER'])
-			
+
 			# Enregistrez le fichier dans le dossier d'upload avec un nouveau nom si nécessaire
-			chemin_enregistrement = os.path.join(app.config['UPLOAD_FOLDER'], 'nouveau_nom_image.jpg')
+			chemin_enregistrement = os.path.join(app.config['UPLOAD_FOLDER'], 'in.png')
 			fichier.save(chemin_enregistrement)
 			return 'Téléchargement réussi !'
-	
+
 	return 'Échec du téléchargement.'
+
+
+
+@app.route('/uploadFileTxt', methods = ['POST'])
+def uploadFileTxt() :
+	# Vérifier si le formulaire contient un fichier
+	if 'file' in request.files:
+		fichier = request.files['file']
+
+		# Vérifier si le fichier a un nom et est autorisé
+		if fichier.filename != '' and fichier.filename.endswith(('.txt')):
+			# Assurez-vous que le dossier d'upload existe, sinon créez-le
+			if not os.path.exists(app.config['UPLOAD_FOLDER']):
+				os.makedirs(app.config['UPLOAD_FOLDER'])
+
+			# Enregistrez le fichier dans le dossier d'upload avec un nouveau nom si nécessaire
+			chemin_enregistrement = os.path.join(app.config['UPLOAD_FOLDER'], 'in.txt')
+			fichier.save(chemin_enregistrement)
+
+			res = main("file")
+
+			return render_template ( 'pages/texte.html', resultat = res )
+
+
+	return render_template ( 'pages/texte.html', resultat = "Error while downloading" )
+
+
+
+@app.route('/uploadTxt', methods = ['POST'])
+def uploadTxt() :
+	if 'text' in request.form:
+		texte = request.form['text']
+
+		if len(texte.split()) <= 3 :
+			return render_template('pages/texte.html', resultat = "Vous n'avez entré que ")
+
+
+		res = main(texte)
+
+		return render_template('pages/texte.html', resultat = res)
+
+	return 'Échec du traitement du texte.'
+
+
 
 if __name__ == '__main__':
 	app.run(debug=True)

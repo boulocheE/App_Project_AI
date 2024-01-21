@@ -278,7 +278,7 @@ div.page li:hover { color : #229954; }
 
 /* PARTIE PROJET */
 
-section#projet { display: none; }
+section#compteRendu { display: none; }
 
 section#projet #fichierTxt { display: none; }
 
@@ -304,31 +304,39 @@ input[type = "radio"]:checked, input[type = "checkbox"]:checked {
 }
 
 
-button {
+input[type = "submit"], input[type = "reset"] {
 	position : fixed;
-
 	right : 2%;
 	bottom : 2%;
+
+	width : 7%;
 
 	background : #229954;
 	color : white;
 	border : 0px;
 	padding : 1%;
 
-	box-shadow: 0 0 1em #88888888;
+	box-shadow: 0 0 15px #88888888;
 
 	margin : 0 2% 2% 0;
 
 	font-size :medium;
 }
 
-button:active {
+input[type = "submit"] {
+	position : fixed;
+
+	right : calc(2% + 7% + 20px);
+	bottom : 2%;
+}
+
+input[type = "submit"]:active, input[type = "reset"]:active {
 	background : white;
 	color : #229954;
 	border : solid 1px  #229954;
 }
 
-input[type = "text"] {
+textarea {
 	width : 70%;
 	height: 20vh;
 
@@ -340,7 +348,7 @@ input[type = "text"] {
 	padding : 2%;
 }
 
-input[type = "text"]:focus {
+textarea:focus {
 	outline : none;
 	border : solid 2px #229954;
 	box-shadow: 0 0 1em #88888888;
@@ -438,6 +446,7 @@ section#projet img {
 
 	opacity: 0.7;
 }
+
 
 
 /* ------------------------------------ */
