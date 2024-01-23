@@ -143,8 +143,8 @@
 								<img class = "attentePhoto" src = "{{ url_for('static', filename = 'images/download.svg') }}" alt = "download" class = "imgChoisie">
 							{% endif %}
 
-							<input type = "file" name = "image" id = "fichierPhoto" accept = ".jpeg, .png, .jpg, .svg">
 							<label id = "labelFichierPhoto"> No file Selected </label>
+							<input type = "file" name = "image" id = "fichierPhoto" accept = ".jpeg, .png, .jpg, .svg">
 					</div>
 				</div>
 
@@ -154,9 +154,9 @@
 
 
 			<div class = "divPhoto">
-				<div class = "photo">
+				<div class = "photo photoRes">
 					{% if resultat %}
-						<img src = "{{ url_for('static', filename = 'images/out.jpg') }}" alt = "Result photo" class = "imgChoisie">
+						<img src = "{{ url_for('static', filename = 'images/out.jpg') }}" alt = "Result photo" class = "imgChoisie" onclick = "agrandissementPhoto()">
 					{% endif %}
 
 					<label id = "labelFichierPhotoRes"> Result </label>

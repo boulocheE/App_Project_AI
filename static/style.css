@@ -405,11 +405,11 @@ div.photo {
 section#projet input[type = "file"]#fichierPhoto { display : none; }
 
 section#projet div.photo label#labelFichierPhoto, section#projet div.photo label#labelFichierPhotoRes {
-	position : absolute;
+	position : absolute ;
 	bottom : 0;
-	left : 0;
+	left : 1%;
 
-	width : 94%;
+	width : 90%;
 	text-align: center;
 	padding : 3% 0 3% 0;
 
@@ -420,6 +420,22 @@ section#projet div.photo label#labelFichierPhoto, section#projet div.photo label
 	border-radius : 6px;
 
 	box-shadow: 0 0 5px #88888888;
+}
+
+
+section#projet div.photoRes img:hover {
+	width : 55%;
+
+	position : fixed;
+	top : 5vh;
+	left : 20%;
+
+	padding : 0;
+	margin : 0;
+}
+
+div.photoRes img:hover + label {
+	display : none;
 }
 
 
@@ -510,6 +526,7 @@ div#resultat p { margin-top : 12%; }
 
 
 img.attentePhoto { opacity : 0.7; }
+
 
 
 section#compteRendu h3 {
