@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang = 'fr'>
+
+	<head>
+		<title> AI Projects </title>
+
+		<meta charset = 'utf-8'>
+		<meta content = 'Author' lang = 'fr' name = 'BOULOCHE Eleonore'>
+
+		<link rel = 'stylesheet' href = "{{ url_for('static', filename='style.css') }}" media = 'all' type = 'text/css'>
+
+		<script src = "{{ url_for('static', filename='script.js') }}"></script>
+	</head>
+
+
+	<body class = "page">
+
+		<header id = 'header'>
+			<hgroup>
+				<h1> AI Projects </h1>
+				<p> Portfolio of my AI projects </p>
+			</hgroup>
+		</header>
+
+
+		<!-- Menu du site -->
+		<nav id = "menu">
+
+			<ul>
+				<li> <a href = "{{ url_for('index') }}"> <img src = "{{ url_for('static', filename = 'images/maison.png') }}" alt = 'Accueil'> HOME </a>  </li>
+
+				<li class = "partie choix"> <span> MAIN PROJECTS </span>
+					<ul>
+						<li                 > <a href = "{{ url_for('pageText'            ) }}"> Text classification </a> </li>
+						<li id = "choixPage"> <a href = "{{ url_for ('pagePanneauxRoutiers') }}"> Road sign recognition </a> </li>
+					</ul>
+				</li>
+
+				<li class = "partie"> <span> PART 1 </span>
+					<ul>
+						<li> Text 1 </li>
+						<li> Text 2 </li>
+						<li> Text 3 </li>
+						<li> Text 4 </li>
+					</ul>
+				</li>
+
+				<li class = "partie"> <span> PART 2 </span>
+					<ul>
+						<li> Text 5 </li>
+						<li> Text 6 </li>
+						<li> Text 7 </li>
+						<li> Text 8 </li>
+					</ul>
+				</li>
+
+				<li class = "partie"> <span> PART 3 </span>
+					<ul>
+						<li> Text 9 </li>
+						<li> Text 10 </li>
+						<li> Text 11 </li>
+						<li> Text 12 </li>
+					</ul>
+				</li>
+			</ul>
+
+		</nav>
+
+
+
+		<div class = "page">
+			<nav>
+				<ul>
+					<li id = "menuCR"                 onclick = "changementEtat(event, 'projet', 'compteRendu', 'menuPr', 'menuCR')"> Report  </li>
+					<li id = "menuPr" class = "choix" onclick = "changementEtat(event, 'compteRendu', 'projet', 'menuCR', 'menuPr')"> Project </li>
+				</ul>
+			</nav>
+
+			<hr>
+		</div>
+
+
+		<section id = "compteRendu">
+			<div>
+
+				<p>In this notebook, you will find all the steps I used to detect and classify a road sign on an image.<br>
+				This notebook is the result of many python scripts, many models, many other notebooks and a lot of researches.<br><br></p>
+
+				<h3>Architecture</h3>
+
+				<hr>
+
+				<p>Here, you are in the <code>src/predict_from_scratch</code> where I show from the very beginning how to predict. Here are other directories you might be interested in: <br><br> </p>
+				<ul>
+					<li><code>src/Data_augmentation</code>: This directory is the one I used to augment data. I explain how & why to have the same amount of data for each category. I augmented twice the data. Make sure you check <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/src/Data_augmentation/data-augmentation.ipynb">this notebook</a> and <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/src/Data_augmentation/data-augmentation-bis.ipynb">this one</a>. I also used <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/src/Data_augmentation/data-zoomer.py">this script</a> to generate some zoomed images but it ended up being inacurate.</li>
+					<li><code>src/pannel_locator</code>: This directory is focused on the shape classification. It's helpful in the filtering process to know where a sign is and if the shape is circular enough to run our sign model on it. Check <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/src/pannel_locator/shape-recognizer.ipynb">this notebook</a> to learn more about it.</li>
+					<li><code>src/Pannel_recognizer</code>: This directory is the one I used to create a model. Check <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/src/Pannel_recognizer/model-maker.py">this script</a> That I used to create our <code>best_model.h5</code>.</li>
+				</ul>
+				<p>You can also find, in the <code>Training</code> directory what I trained my model on. Some images are about the <strong>gtrsb</strong> dataset. Most of the picture are from me: I screenshooted a lot of them on google street view. You can find some informations at the very bottom of <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/src/Data_augmentation/data-augmentation.ipynb">this notebook</a> or <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/dataset.md">here</a>.</p>
+
+				<p>There's a <code>useless</code> directory that I kept <em>in the case</em> but it's still useless. It was some part of my work that ended up useless.</p>
+
+				<p>The <code>models</code> directory is where I store my shape / road-sign models. feel free to test them</p>
+
+				<p>The <code>img</code> directory contains some full images containing (or not) road sign to test the model.</p>
+
+				<p>Run <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/src/predict_from_scratch/predict_from_scratch.py">this python script</a> from the <code>src/predict_from_scratch</code> directory (or edit the path in the script) to have an overview of the model on some photos</p>
+
+				<p>There are some unfolded files in the root directory. For example <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/none.sh">none.sh</a> helped me to create <strong>generic filenames</strong> & <a href="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/pot_sources.txt">pot_sources.txt</a> was created at the very beginning when I stored some potential sources for my project. I looked some of them but none of them inspired me, I found them more difficult than the processes used during the classes/homeworks.</p>
+
+				<h3>Limitations</h3>
+
+				<hr>
+
+				<p>My road sign model is great (it has a <strong>val_accuracy > 0.90</strong>) but the issue (what I would have worked on if I had more time) is that the pannel_locator model isn't very accurate. it sometimes recognizes signs where there's no sign and is very sensitive to a <strong>red background</strong> or <strong>sign viewed from aside</strong></p>
+
+				<h3>Good usage</h3>
+
+				<hr>
+
+				<p><strong>This sign inside a picture will be recognized</strong></p>
+				<img src="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/illustration/sign.png" alt="img1">
+
+				<p><strong>This sign has a red background: no edges ; maybe no recognition</strong></p>
+				<img src="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/illustration/sign_red.png" alt="img1">
+
+				<p><strong>This sign is viewed from aside: Elliptic shape ; maybe no recognition</strong></p>
+				<img src="https://github.com/antoineMontier/Road-Sign-Recognition/tree/main/illustration/sign_side.png" alt="img1">
+
+			</div>
+		</section>
+
+
+		<section id = "projet">
+
+			<form action = "/uploadPhoto" method = "post" enctype = "multipart/form-data">
+
+				<div class = "divPhoto">
+					<div class = "photo" onclick = "ouvrirSelecteurDeFichier()">
+							{% if resultat %}
+								<img src = "{{ url_for('static', filename = 'images/in.png') }}" alt = "Selected photo" class = "imgChoisie">
+							{% else %}
+								<img class = "attentePhoto" src = "{{ url_for('static', filename = 'images/download.svg') }}" alt = "download" class = "imgChoisie">
+							{% endif %}
+
+							<label id = "labelFichierPhoto"> No file Selected </label>
+							<input type = "file" name = "image" id = "fichierPhoto" accept = ".jpeg, .png, .jpg, .svg">
+					</div>
+				</div>
+
+				<input type = "submit" value = "Send">
+				<input type = "reset"  value = "Reset">
+			</form>
+
+
+			<div class = "divPhoto">
+				<div class = "photo photoRes">
+					{% if resultat %}
+						<img src = "{{ url_for('static', filename = 'images/out.png') }}" alt = "Result photo" class = "imgChoisie" onclick = "agrandissementPhoto()">
+					{% endif %}
+
+					<label id = "labelFichierPhotoRes"> Result </label>
+				</div>
+			</div>
+
+
+			{% if erreur %}
+				<div id = 'error'>
+					<p> {{erreur}} </p>
+
+					<button onclick = "validationErreur()"> OK </button>
+				</div>
+			{% endif %}
+
+
+		</section>
+
+
+
+
+	</body>
+
+</html>

@@ -1,0 +1,596 @@
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*            STYLE GENERAL             */
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+* {
+	margin : 0px;
+	padding : 0px;
+
+	font-family : Avenir, sans-serif;
+}
+
+
+body { background : #F5F5F5; }
+
+
+header {
+	padding-top    : calc( 15vh / 2 );
+	padding-bottom : calc( 15vh / 2 );
+
+	background: #229954;
+
+	color : white;
+	text-align: center;
+	font-size : 1.5em;
+}
+
+
+
+
+hr {
+	border : 0;
+	margin : 0 0 4% 0;
+	padding : 0;
+
+	border-top : solid 2px #DBDBDB;
+
+	width : 100%;
+}
+
+
+a, a:visited {
+	color : black;
+	text-decoration: none;
+}
+
+
+/* PARTIE - Navigation */
+
+nav#menu {
+	position : fixed;
+
+	width: 12%;
+
+	padding : 1% 1% 1% 0;
+}
+
+nav#menu img {
+	width : 20%;
+
+	margin : 0 5% 0 10%;
+}
+
+nav#menu > ul { padding-left : 1%; }
+
+
+nav#menu li, nav#menu li a:visited {
+	padding : 10%;
+
+	color : #7A7A7A;
+
+	list-style : none;
+
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+nav#menu li ul { display : none; }
+
+nav#menu li li, nav#menu a, nav#menu li li a:visited { color : #4A4A4A }
+nav#menu li li + nav#menu li li a {
+	padding : 5%;
+	margin-left : 5%;
+}
+
+nav#menu li:hover ul { display : block; }
+
+nav#menu li li:hover, nav#menu li li a:hover { color : #229954; }
+
+nav#menu li.partie:hover {
+	box-shadow: 0 0 1em #88888888;
+	background : white;
+}
+
+
+nav#menu li.choix ul { display : block; }
+
+nav#menu li#choixPage {
+	color : #229954;
+	font-weight: bold;
+}
+
+nav#menu li#choixPage a:visited { color : #229954; }
+
+
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*           STYLE PARCOURS             */
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+div#parcours {
+	width : 65%;
+
+	float : left;
+
+	margin : 0 1% 4% 15%;
+}
+
+div#parcours article {
+	float : left;
+
+	width : calc( 48% - 2% - 3% - 4px );
+	min-width : 70px;
+
+	padding : 0 2% 2% 2%;
+	margin  : 3% 3% 0 0;
+
+	box-shadow: 0 0 2em #88888888;
+	border-radius: 1px;
+
+	background: white;
+
+	text-align : justify;
+}
+
+
+div#parcours article#div3 { width : calc( (48% - 2% - 14px) * 2 + 3% ); }
+div#parcours article#div3 strong { color : #229954; }
+
+div#parcours h2 {
+	padding : 8% 0 4% 0;
+	font-size:xx-large;
+	font-weight: 500;
+}
+
+
+div#parcours article#div3 h2 { padding : 4% 0 2% 0; }
+div#parcours article#div3 hr { margin-bottom : 2%; }
+
+
+div#parcours article#div3 p { width : 100%; }
+
+div#parcours article#div3 li {
+	width : 70%;
+	margin : 1% 15% 0 15%;
+}
+
+
+
+
+
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*            STYLE CONTACT             */
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+div#contact {
+	width : 17%;
+	height : 200vh;
+
+	padding : 1%;
+
+	float : left;
+}
+
+
+div#contact > figure img {
+	width : 85%;
+	box-shadow: 0 0 1em #88888888;
+
+	margin: 6% 0 5% calc((100% - 85%) /2);
+}
+
+
+div#contact > figure figcaption {
+	text-align: center;
+	color : #4A4A4A;
+}
+
+
+div#contact div figure { margin : 5% 0 5% 0; }
+
+div#contact div img { width : 10%; }
+
+div#contact div figcaption {
+	float : right;
+
+	width : 80%;
+
+	padding : 0 5% 0 5%;
+}
+
+div#contact hr { margin : 8% 0 8% 0; }
+
+
+
+
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*             STYLE PAGES              */
+/* ------------------------------------ */
+/* ------------------------------------ */
+body.page section  { margin-left : 15%; }
+body.page div.page { margin-left: 20%; }
+
+div.page { width : 75%; }
+
+div.page nav {
+	width : 100%;
+
+	padding : 2% 0 2% 0;
+	margin : 1% 0 0 0;
+}
+
+
+div.page nav li.choix {
+	color : white;
+	background: #229954;
+	box-shadow: 0 0 1em #88888888;
+}
+
+div.page nav li {
+	float: left;
+
+	width : 15%;
+
+	list-style: none;
+
+	text-align: center;
+
+	padding : 1% 0 1% 0;
+
+	border: solid 1px #229954;
+	background : white;
+
+	margin-right : 2%;
+
+	border-top-right-radius : 5px;
+	border-top-left-radius  : 5px;
+}
+
+div.page hr {
+	width: 90%;
+
+	border-top : solid 1px #DBDBDB;
+}
+
+
+div.page li:hover { color : #229954; }
+
+
+
+/* PARTIE PROJET */
+
+section#compteRendu { display: none; }
+
+section#projet #fichierTxt { display: none; }
+
+
+
+input[type = "radio"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #88888888;
+	outline: none;
+	transition: 0.2s all linear;
+}
+
+input[type = "radio"] { border-radius : 50%; }
+div.boutons { margin-bottom : 1%; }
+
+input[type = "radio"]:checked, input[type = "checkbox"]:checked {
+	border-color     : #229954;
+	background-color : #229954;
+}
+
+
+input[type = "submit"], input[type = "reset"] {
+	position : fixed;
+	right : 2%;
+	bottom : 2%;
+
+	width : 7%;
+
+	background : #229954;
+	color : white;
+	border : 0px;
+	padding : 1%;
+
+	box-shadow: 0 0 15px #88888888;
+
+	margin : 0 2% 2% 0;
+
+	font-size :medium;
+}
+
+input[type = "submit"] {
+	position : fixed;
+
+	right : calc(2% + 7% + 20px);
+	bottom : 2%;
+}
+
+input[type = "submit"]:active, input[type = "reset"]:active {
+	background : white;
+	color : #229954;
+	border : solid 1px  #229954;
+}
+
+textarea {
+	width : 60%;
+	height: 20vh;
+
+	border : solid 1px #88888888;
+	border-radius: 3px;
+
+	margin : 2% 10% 2% 5%;
+
+	padding : 2%;
+}
+
+textarea:focus {
+	outline : none;
+	border : solid 2px #229954;
+	box-shadow: 0 0 1em #88888888;
+}
+
+
+input[type = "file"]::file-selector-button {
+	background : #229954;
+	color : white;
+
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+
+input[type = "file"]::file-selector-button:active {
+	background-color: white;
+
+	color : #229954;
+}
+
+
+input[type = "file"] {
+	background : white;
+	color : #229954;
+
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+input[type = "file"], input[type = "file"]::file-selector-button {
+	width: 50%;
+	height : 5vh;
+
+	font-size :medium;
+
+	border : solid 1px #229954;
+}
+
+
+section#projet div#fichierTxt { width: 60%; }
+
+
+
+div.divPhoto {
+	float : left;
+	width : 30%;
+	height : 50vh;
+
+	background : white;
+
+	border : solid 1px #229954;
+
+	margin : 0 2% 0 5%;
+}
+
+
+div.photo {
+	width : 100%;
+	height : 50vh;
+	position: relative;
+}
+
+section#projet input[type = "file"]#fichierPhoto { display : none; }
+
+section#projet div.photo label#labelFichierPhoto, section#projet div.photo label#labelFichierPhotoRes {
+	position : absolute ;
+	bottom : 0;
+	left : 1%;
+
+	width : 90%;
+	text-align: center;
+	padding : 3% 0 3% 0;
+
+	background : #F5F5F5;
+
+	margin : 3%;
+
+	border-radius : 6px;
+
+	box-shadow: 0 0 5px #88888888;
+}
+
+
+section#projet div.photoRes img:hover {
+	width : 45%;
+
+	position : fixed;
+	top : 5vh;
+	left : calc( 55% / 2);
+
+	padding : 0;
+	margin : 0;
+}
+
+div.photoRes img:hover + label {
+	display : none;
+}
+
+
+section#projet div.photo label#labelFichierPhoto:active {
+	background : white;
+	color : #229954;
+
+	border : solid 1px #229954;
+}
+
+section#projet div.photo label#labelFichierPhotoSelect {
+	background : #229954;
+	color : white;
+}
+
+
+section#projet img {
+	width: 60%;
+
+	margin : 8% 20% 0% 20%;
+}
+
+
+/* Gestion des notifications d'erreurs */
+div#error {
+	width: 30%;
+	/* height: 15vh; */
+
+	background : white;
+
+	border: solid 1px #229954;
+	border-radius: 5px;
+
+	text-align: center;
+
+	position : fixed;
+	top : 45%;
+	left : 35%;
+
+	/* display: none; */
+}
+
+div#error p { margin : 5% 0 5% 0; }
+
+div#error button {
+	width : 80%;
+
+	padding : 3%;
+	margin : 0 10% 5% 10%;
+
+	color : white;
+
+	background : #229954;
+
+	border : solid 1px #229954;
+	border-radius: 5px;
+}
+
+
+div#error button:active {
+	background : white;
+	color : #229954;
+}
+
+
+
+div#resultat {
+	position : fixed;
+	right : 3%;
+	top : 54%;
+
+	width : 20%;
+	height: calc(20vh + 4%);
+
+	border : solid 1px #229954;
+	border-radius: 10px;
+
+	background: white;
+
+	font-size : 500%;
+	text-align: center;
+
+	box-shadow: 0 0 20px #88888888;
+}
+
+div#resultat p { margin-top : 12%; }
+
+
+
+img.attentePhoto { opacity : 0.7; }
+
+
+
+section#compteRendu h3 {
+	padding : 1% 1% 0 1%;
+
+	font-size : 150%;
+
+	margin-left : 15%;
+}
+
+
+section#compteRendu h3:not(:first-of-type) { margin-top : 5%; }
+section#compteRendu {
+	padding : 0 3% 3% 3%;
+
+	text-align: justify;
+}
+
+section#compteRendu li { margin-bottom : 1%; }
+
+section#compteRendu hr {
+	width : 80%;
+
+	margin : 1% 0 2% 10%;
+	padding : 0;
+}
+
+section#compteRendu strong { color : #229954; }
+
+section#compteRendu a {
+	text-decoration: underline;
+
+	color : #348d59;
+}
+
+section#compteRendu a:visited {
+	color : #06652e;
+	font-weight: 300;
+}
+
+
+
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+/*           STYLE RESONSIVE            */
+/* ------------------------------------ */
+/* ------------------------------------ */
+
+
+@media screen and (max-width: 600px) {
+	section#parcours article {
+		flex-direction: column; /* Les div vont passer en dessous l'une de l'autre */
+		width : 100%;
+	}
+
+	nav {
+		display : none;
+	}
+}
+
+
+
+
+/* TITRES :     7A7A7A
+   SOUS TITRES :4A4A4A 
+*/

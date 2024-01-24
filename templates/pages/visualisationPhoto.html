@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+
+	<head>
+		<title> AI Projects </title>
+
+		<meta charset = 'utf-8'>
+		<meta content = 'Author' lang = 'fr' name = 'BOULOCHE Eleonore'>
+
+		<link rel = 'stylesheet' href = "{{ url_for('static', filename='style.css') }}" media = 'all' type = 'text/css'>
+
+		<script src = "{{ url_for('static', filename = 'script.js') }}"></script>
+	</head>
+
+
+	<body>
+
+		<img src = "{{ url_for('static', filename = 'images/out.png') }}" alt = 'Labeled image'  id = "imgOutSortie">
+
+		<img src = "{{ url_for('static', filename = 'images/in.png')  }}" alt = 'Original image' id = "imgInSortie" >
+
+	</body>
+
+</html>

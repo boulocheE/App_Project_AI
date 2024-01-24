@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+
+	<head>
+		<title> AI Projects </title>
+
+		<meta charset = 'utf-8'>
+		<meta content = 'Author' lang = 'fr' name = 'BOULOCHE Eleonore'>
+
+		<link rel = 'stylesheet' href = "{{ url_for('static', filename='style.css') }}" media = 'all' type = 'text/css'>
+
+		<script src = "{{ url_for('static', filename = 'script.js') }}"></script>
+	</head>
+
+
+	<body>
+		
+
+		<header id = 'header'>
+			<hgroup>
+				<h1> AI Projects </h1>
+				<p> Portfolio of my AI projects </p>
+			</hgroup>
+		</header>
+
+
+		<!-- Menu du site -->
+		<nav id = "menu">
+
+			<ul>
+				<li id = "choixPage"> <a href = "{{ url_for('index') }}"> <img src = "{{ url_for('static', filename = 'images/maison.png') }}" alt = 'Accueil'> HOME </a>  </li>
+
+				<li class = "partie"> <span> MAIN PROJECTS </span>
+					<ul>
+						<li> <a href = "{{ url_for('pageText') }}"> Text classification </a> </li>
+						<li> <a href = "{{ url_for('pagePanneauxRoutiers') }}"> Road sign recognition </a> </li>
+					</ul>
+				</li>
+
+				<li class = "partie"> <span> PART 1 </span> </li>
+				<li class = "partie"> <span> PART 2 </span> </li>
+				<li class = "partie"> <span> PART 3 </span> </li>
+			</ul>
+
+		</nav>
+
+
+
+		<!-- Explication de son parcours, etc -->
+		<div id = "parcours">
+
+			<article id = "div1">
+				<h2> Welcome </h2>
+
+				<hr>
+
+				<p>
+					Welcome to my Data Science and Artificial Intelligence portfolio. 
+					I'm delighted that you're visiting my website. 
+					This platform serves as an opportunity for me to showcase a variety of projects, 
+					each with its unique characteristics. While some projects represent significant 
+					efforts spanning several weeks, others are smaller endeavors requiring only a few hours 
+					of work. I invite you to explore, share, and offer your feedback.
+					<br><br>
+					This portfolio serves as a gateway to the various projects 
+					I undertook during the "Artificial Intelligence in Data Science" course. 
+					As a French student, I had the unique opportunity to participate in the ERASMUS 
+					program during the autumn semester of 2023-2024. My studies took place at the Budapest 
+					University of Technology and Economics in Budapest, where I gained extensive knowledge 
+					in various aspects of Artificial Intelligence. This experience not only allowed me to 
+					immerse myself in Eastern European culture but also provided me with the chance to explore 
+					neighboring countries like Romania, Serbia, and Austria. Additionally, it offered a fresh perspective 
+					on programming, introducing me to different standards and practices prevalent in other countries. 
+					This journey was not just an academic pursuit but also a deep dive into each domain that 
+					captivates my interest.
+				</p>
+			</article>
+
+
+			<article id = "div2">
+				<h2> About myself </h2>
+
+				<hr>
+
+				<p>
+					I am a French student currently in my third year of a bachelor's degree in computer science. 
+					With over two years of rigorous study in the field, my academic interests have gravitated 
+					towards low-level computing, cybersecurity, networking, and data science. In parallel with 
+					my studies, I have been working as an online teacher, where I impart knowledge in mathematics 
+					and computer science.
+
+					<br><br>
+
+					Outside the realm of academia and work, I have a keen passion for 
+					travel and exploration. I enjoy visiting new countries, immersing myself 
+					in different cultures, and hiking through diverse landscapes. This blend of technical 
+					expertise, teaching experience, and a love for adventure shapes who I am and drives my enthusiasm 
+					for continuous learning and growth.
+				</p>
+			</article>
+
+
+			<article id = "div3">
+				<h2> Course syllabus </h2>
+
+				<hr>
+
+				<p>
+					During the "Artificial Intelligence in Data Science" course, I had the chance to delve into numerous facets of programming, each offering a unique perspective and set of skills. The course covered a broad range of topics, including : <br><br>
+				</p>
+
+				<ul>
+					<li><strong>Statistical Overview:</strong> A foundational understanding of statistics in the context of AI.</li>
+					<li><strong>Image Segmentation and Recognition:</strong> Focused on tasks like car plate recognition and number recognition, applying advanced image processing techniques.</li>
+					<li><strong>Deep Learning:</strong> Building neural networks from scratch using numpy, and exploring deeper concepts in subsequent classes.</li>
+					<li><strong>Titanic Data Analysis:</strong> A practical application involving the fitting of Titanic dataset, showcasing data handling and analysis skills.</li>
+					<li><strong>Higher-Level Implementations:</strong> Utilizing frameworks like TensorFlow and sklearn for more complex tasks, including one hot encoding and dataset handling (e.g., MNIST dataset).</li>
+					<li><strong>Challenges and Competitions:</strong> Engaging in practical challenges like the Red Wine challenge, where we applied our knowledge to real-world scenarios.</li>
+					<li><strong>Advanced Neural Network Concepts:</strong> Exploring convolutional neural networks (CNNs) for tasks like shape recognition and handwritten digit recognition, including techniques like early stopping, training visualization, and callbacks.</li>
+					<li><strong>Utilizing Pre-Trained Models:</strong> Learning about the application and modification of pre-trained models, such as freezing layers and adapting models like VGG16 for specific tasks.</li>
+					<li><strong>Data Augmentation and Autoencoding:</strong> Techniques to enhance and create more versatile datasets, applied in contexts like augmenting handwritten digits data.</li>
+					<li><strong>Genetic Algorithms and Reinforcement Learning:</strong> Implementing AI in games, evidenced by projects where AI plays games like Snake, Flappy Bird, and Tic-Tac-Toe, and analyzing their learning and adaptation processes.</li>
+					<li><strong>Handling Textual and Sequential Data:</strong> Projects included predicting missing words from Harry Potter sentences and advanced synonym analysis, as well as using LSTM for airline and word prediction, and temperature prediction.</li>
+					<li><strong>Unsupervised Learning and Decision Trees:</strong> Focusing on techniques like random forest and other unsupervised learning methods.</li>
+				</ul>
+
+				<p>
+					<br>This comprehensive curriculum not only enhanced my technical prowess in various AI domains but also provided a holistic view of how these technologies can be applied in diverse scenarios.
+				</p>
+			</article>
+
+		</div>
+
+
+
+		<!-- Coordonnées pour le contacter -->
+		<div id = "contact">
+
+			<figure>
+				<img src = "{{ url_for('static', filename = 'images/photo_Antoine.jpg') }}" alt = "Photo Antoine Montier">
+
+				<figcaption> Antoine MONTIER </figcaption>
+			</figure>
+
+
+			<div>
+
+				<figure>
+					<img src = "{{ url_for('static', filename = 'images/tel.png') }}" alt = "Téléphone">
+
+					<figcaption> +33 X XX XX XX XX </figcaption>
+				</figure>
+
+				<figure>
+					<img src = "{{ url_for('static', filename = 'images/mail.png') }}" alt = "Mail">
+
+					<figcaption> <a href = "mailto:antoine.montier@sfr.fr"> antoine.montier@sfr.fr </a> </figcaption>
+				</figure>
+
+
+				<hr>
+
+
+				<figure>
+					<img src = "{{ url_for('static', filename = 'images/linkedin.png') }}" alt = "Linkedin">
+
+					<figcaption> <a href = "https://www.linkedin.com/in/antoine-montier/" > antoine-montier </a> </figcaption>
+				</figure>
+
+				<figure>
+					<img src = "{{ url_for('static', filename = 'images/github.png') }}" alt = "github">
+
+					<figcaption> <a href = "https://github.com/antoineMontier"> antoineMontier </a> </figcaption>
+				</figure>
+
+			</div>
+
+		</div>
+
+
+	</body>
+
+</html>
